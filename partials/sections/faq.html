@@ -1,0 +1,78 @@
+<!--
+  FAQ Accordion — accessible, keyboard-friendly, single-open optional.
+  Each <details> uses the native HTML behavior; JS adds smooth animation
+  and (optionally) closes others when one opens.
+
+  Set data-faq-single on the <ul> to enforce single-open mode.
+-->
+<section class="px-5 py-12 lg:px-16 lg:py-20" aria-labelledby="faq-title">
+  <div class="mx-auto max-w-[768px]">
+    <header class="text-center">
+      <p class="font-body text-sm font-medium uppercase tracking-wider text-[#a0863c]">FAQs</p>
+      <h2 id="faq-title" class="mt-3 font-heading text-3xl font-bold leading-tight text-[#24201a] sm:text-4xl lg:text-[44px]">
+        Frequently asked questions
+      </h2>
+      <p class="mt-4 font-body text-base leading-[1.5] text-[#24201a] sm:text-lg">
+        Everything you need to know before starting your apparel project with Fabricly.
+      </p>
+    </header>
+
+    <ul class="mt-10 flex flex-col divide-y divide-[#0c0801]/10 border-y border-[#0c0801]/10" data-faq data-faq-single>
+      <li>
+        <details class="faq-item group">
+          <summary class="faq-summary">
+            <span>What is the minimum order quantity (MOQ)?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-content">
+            <p>Our standard MOQ is 100 units per style/color, but we offer flexibility for first-time customers and pilot batches. Contact us with your specific requirements.</p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="faq-item group">
+          <summary class="faq-summary">
+            <span>How long does production take?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-content">
+            <p>Lead time is typically 25–45 days depending on order size and complexity. Sampling takes 7–10 days.</p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="faq-item group">
+          <summary class="faq-summary">
+            <span>Do you handle international shipping?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-content">
+            <p>Yes — we ship globally via sea and air freight, including export documentation, customs clearance, and door-to-door delivery options.</p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="faq-item group">
+          <summary class="faq-summary">
+            <span>Can I get fabric samples before ordering?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-content">
+            <p>Absolutely. We provide fabric swatches and pre-production samples (PPS) for approval before bulk production begins.</p>
+          </div>
+        </details>
+      </li>
+      <li>
+        <details class="faq-item group">
+          <summary class="faq-summary">
+            <span>What payment terms do you offer?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="faq-content">
+            <p>Standard terms are 30% advance + 70% before shipment. Larger or recurring clients may qualify for L/C or 60-day terms.</p>
+          </div>
+        </details>
+      </li>
+    </ul>
+  </div>
+</section>

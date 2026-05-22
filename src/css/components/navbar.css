@@ -1,0 +1,41 @@
+/* Navbar component styles
+ * Authored as Tailwind @apply utility classes (works inside the @layer components
+ * block of src/css/input.css). If you don't use Tailwind's build, the classes
+ * below can be referenced via the .nav-link / .mobile-nav-link / .btn-primary
+ * names directly from navbar.html — duplicate the rules into plain CSS as needed.
+ */
+
+@layer components {
+  .nav-link {
+    @apply text-[#24201a] text-base font-normal leading-[1.5] whitespace-nowrap
+           transition-colors hover:text-[#a0863c] focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2
+           rounded-sm;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  .nav-link.is-active {
+    @apply text-[#a0863c] font-medium;
+  }
+
+  .mobile-nav-link {
+    @apply block w-full py-3 text-base font-normal text-[#24201a] leading-[1.5]
+           border-b border-neutral-100 last:border-b-0
+           hover:text-[#a0863c];
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  .mobile-nav-link.is-active {
+    @apply text-[#a0863c] font-medium;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded
+           bg-[#c9a84c] border border-[#a0863c] text-white
+           px-3 py-1.5 leading-[1.5] font-medium whitespace-nowrap
+           transition-colors hover:bg-[#a0863c]
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+}

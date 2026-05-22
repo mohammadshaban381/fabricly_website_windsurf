@@ -1,0 +1,26 @@
+{
+  // Stop VS Code's built-in CSS validator from flagging Tailwind at-rules
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // Treat our Tailwind entry as Tailwind CSS so IntelliSense activates
+  "files.associations": {
+    "src/css/input.css": "tailwindcss"
+  },
+
+  // Tailwind IntelliSense: enable class autocomplete inside our custom helpers
+  "tailwindCSS.experimental.classRegex": [
+    ["data-include=\"([^\"]*)\""]
+  ],
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "javascript": "javascript",
+    "css": "css"
+  },
+
+  // Show Emmet autocomplete for Tailwind classes in HTML
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
+}

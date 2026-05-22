@@ -1,0 +1,28 @@
+@layer components {
+  .footer-heading {
+    @apply font-body text-base font-semibold text-[#24201a];
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .footer-link {
+    @apply block py-2 font-body text-sm text-[#24201a] transition-colors hover:text-[#a0863c];
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded
+           border border-[#0c0801]/30 bg-transparent text-[#24201a]
+           px-3 py-1.5 leading-[1.5] font-medium whitespace-nowrap
+           transition-colors hover:bg-[#0c0801]/5
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .social-icon {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded text-[#24201a]
+           transition-colors hover:bg-[#0c0801]/5 hover:text-[#a0863c]
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c];
+  }
+  /* btn-primary already defined in navbar.css; ensure leading icon spacing */
+  .btn-primary {
+    @apply gap-2;
+  }
+}

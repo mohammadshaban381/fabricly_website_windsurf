@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-scheme1-bg text-scheme1-text font-body antialiased;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', system-ui, sans-serif;
+    font-weight: 700;
+  }
+  ::selection {
+    background: theme('colors.roti.DEFAULT');
+    color: white;
+  }
+}
+
+/* =========================================================================
+   COMPONENTS
+   ========================================================================= */
+@layer components {
+
+  /* --- Buttons --------------------------------------------------------- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3 rounded-sm
+           bg-roti border border-roti-dark text-white
+           px-3 py-1.5 leading-[1.5] font-medium whitespace-nowrap
+           transition-colors hover:bg-roti-dark
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-roti focus-visible:ring-offset-2;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-3 rounded-sm
+           border border-scheme1-border bg-transparent text-scheme1-text
+           px-3 py-1.5 leading-[1.5] font-medium whitespace-nowrap
+           transition-colors hover:bg-scheme1-neutral/5
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-roti focus-visible:ring-offset-2;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-3 rounded-sm
+           border border-roti-lighter bg-transparent text-roti-lightest
+           px-3 py-1.5 leading-[1.5] font-medium whitespace-nowrap
+           transition-colors hover:bg-white/10
+           focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-roti focus-visible:ring-offset-2;
+    font-family: 'Poppins', system-ui, sans-serif;
+  }
+
+  /* --- Navbar ---------------------------------------------------------- */
+  .nav-link {
+    @apply text-scheme1-text text-regular font-normal leading-[1.5] whitespace-nowrap
+           transition-colors hover:text-roti-dark focus-visible:outline-none
+           focus-visible:ring-2 focus-visible:ring-roti focus-visible:ring-offset-2
+           rounded-sm;
+  }
+  .nav-link.is-active { @apply text-roti-dark font-medium; }
+  .mobile-nav-link {
+    @apply block w-full py-3 text-regular font-normal text-scheme1-text leading-[1.5]
+           border-b border-scheme1-neutral/10 last:border-b-0 hover:text-roti-dark;
+  }
+  .mobile-nav-link.is-active { @apply text-roti-dark font-medium; }
+
+  /* --- Footer ---------------------------------------------------------- */
+  .footer-heading { @apply text-regular font-semibold text-scheme1-text; }
+  .footer-link    { @apply block py-2 text-small text-scheme1-text transition-colors hover:text-roti-dark; }
+  .social-icon    {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-sm text-scheme1-text
+           transition-colors hover:bg-scheme1-neutral/5 hover:text-roti-dark
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-roti;
+  }
+
+  /* --- Section helpers ------------------------------------------------- */
+  .section          { @apply px-page-mobile py-12 lg:px-page lg:py-sec-md; }
+  .section-tight    { @apply px-page-mobile py-10 lg:px-page lg:py-sec-sm; }
+  .container-1280   { @apply mx-auto w-full max-w-container; }
+  .eyebrow          { @apply text-regular font-semibold text-scheme1-text; }
+
+  /* --- Card ------------------------------------------------------------ */
+  .card-fg {
+    @apply rounded-sm border border-scheme1-border bg-scheme1-fg shadow-card overflow-hidden;
+  }
+
+  /* --- Tag (chip) ------------------------------------------------------ */
+  .tag {
+    @apply inline-flex items-center rounded-sm border border-scheme1-neutral/15
+           bg-roti-lightest px-2.5 py-1 text-small font-semibold text-scheme1-text;
+  }
+
+  /* --- Tabs (Why choose Fabricly section) ------------------------------ */
+  .tab-link {
+    @apply flex-1 cursor-pointer border-r border-scheme1-border bg-roti-lightest
+           px-8 py-6 text-h6 font-bold text-center text-scheme1-text
+           border-b transition-colors hover:bg-scheme1-fg;
+    font-family: 'Oswald', system-ui, sans-serif;
+  }
+  .tab-link:last-child { @apply border-r-0; }
+  .tab-link[aria-selected="true"] {
+    @apply bg-transparent border-b-0;
+  }
+
+  /* --- FAQ ------------------------------------------------------------- */
+  .faq-item    { @apply w-full; }
+  .faq-summary {
+    @apply flex w-full cursor-pointer list-none items-center justify-between gap-4
+           py-5 text-regular font-medium text-scheme1-text transition-colors
+           hover:text-roti-dark focus-visible:outline-none focus-visible:ring-2
+           focus-visible:ring-roti focus-visible:ring-offset-2 rounded-sm;
+  }
+  .faq-summary::-webkit-details-marker { display: none; }
+  .faq-icon {
+    @apply relative inline-block h-5 w-5 shrink-0 transition-transform duration-200;
+  }
+  .faq-icon::before, .faq-icon::after {
+    content: ''; position: absolute; background: currentColor; border-radius: 1px;
+  }
+  .faq-icon::before { inset: 50% 0 auto 0; height: 2px; transform: translateY(-50%); }
+  .faq-icon::after  { inset: 0 50% 0 auto; width: 2px; transform: translateX(50%); transition: transform 200ms ease; }
+  .faq-item[open] .faq-icon::after { transform: translateX(50%) scaleY(0); }
+  .faq-content { @apply pb-5 text-regular leading-[1.6] text-scheme1-text/80; }
+}

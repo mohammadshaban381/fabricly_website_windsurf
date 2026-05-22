@@ -1,0 +1,13 @@
+<!--
+  Breadcrumb — populate via JS (data-breadcrumb attribute on a page wrapper)
+  or hand-author the <li> list per page.
+-->
+<nav aria-label="Breadcrumb" class="px-5 pt-6 lg:px-16 lg:pt-10">
+  <div class="mx-auto max-w-[1280px]">
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-[#24201a]/70" data-breadcrumb>
+      <li><a href="/index.html" class="hover:text-[#a0863c]">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li aria-current="page" class="text-[#24201a]">Current page</li>
+    </ol>
+  </div>
+</nav>
