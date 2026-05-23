@@ -2,652 +2,270 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#c9a84c" />
-
-  <title>Fabricly — Custom Apparel Manufacturing for Global Brands</title>
+  <title>Fabricly - Custom Apparel Manufacturing at Factory Prices</title>
   <meta name="description" content="Fabricly helps apparel brands develop custom clothing with sourcing, production, and export support. Direct manufacturer, low MOQ, fast quotes within 24 hours." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://fabricly.pk/" />
-
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Fabricly" />
-  <meta property="og:title" content="Fabricly — Custom Apparel Manufacturing for Global Brands" />
-  <meta property="og:description" content="Direct manufacturer • No middlemen • Fast quotes within 24 hours." />
-  <meta property="og:url" content="https://fabricly.pk/" />
-  <meta property="og:image" content="/og-image.jpg" />
+  <meta property="og:title" content="Fabricly - Custom Apparel Manufacturing at Factory Prices" />
+  <meta property="og:description" content="Direct manufacturer, no middlemen, fast quotes within 24 hours." />
+  <meta property="og:image" content="public/images/figma-home/hero.png" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
+  <link rel="icon" href="public/images/logo/logo-icon%20(1).png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="/dist/css/output.css" />
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/css/output.css" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"Fabricly","url":"https://fabricly.pk/","logo":"https://fabricly.pk/public/images/logo/fabricly-logo.svg","email":"contact@fabricly.pk","telephone":"+92-326-8680669","address":{"@type":"PostalAddress","streetAddress":"W3Q4+3X3, Arafat town Block L","addressLocality":"Karachi","postalCode":"74600","addressCountry":"PK"},"sameAs":["https://www.facebook.com/","https://www.instagram.com/","https://wa.me/923268680669"]}
+  {"@context":"https://schema.org","@type":"Organization","name":"Fabricly","url":"https://fabricly.pk/","logo":"https://fabricly.pk/public/images/logo/fabricly-logo-transparent.png","email":"contact@fabricly.pk","telephone":"+92-326-8680669","address":{"@type":"PostalAddress","streetAddress":"W3Q4+3X3, Arafat town Block L","addressLocality":"Karachi","postalCode":"74600","addressCountry":"PK"}}
   </script>
 </head>
-<body>
+<body class="home-page">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-roti focus:px-3 focus:py-2 focus:text-white">Skip to content</a>
 
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-roti focus:px-3 focus:py-2 focus:text-white">Skip to content</a>
-
-  <!-- ─── NAVBAR ──────────────────────────────────────────────────── -->
-  <div data-include="navbar"></div>
+  <header class="site-nav" id="site-header">
+    <a href="index.html" class="brand" aria-label="Fabricly home">
+      <img src="public/images/logo/fabricly-logo-transparent.png" alt="Fabricly" />
+    </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabric-range.html">Fabric Range</a>
+      <a href="manufacturing-process.html">Manufacturing Process</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary">Start Inquiry</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="products.html">Products</a>
+      <a href="fabric-range.html">Fabric Range</a>
+      <a href="manufacturing-process.html">Manufacturing Process</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
 
   <main id="main">
-
-    <!-- ═══ 1. HERO (Header / 5 /) ═══════════════════════════════════
-         Full-bleed dark hero with bg image, white text, dual CTA. -->
-    <section class="relative flex min-h-[640px] items-center overflow-hidden lg:h-[800px]"
-             aria-labelledby="hero-title">
-      <div aria-hidden="true" class="absolute inset-0">
-        <img src="/public/images/hero/home-hero.jpg"
-             alt=""
-             class="h-full w-full object-cover"
-             fetchpriority="high"
-             onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1600&q=80'" />
-        <div class="absolute inset-0 bg-scheme1-neutral/60"></div>
-      </div>
-
-      <div class="container-1280 relative px-page-mobile py-sec-md text-white lg:px-page">
-        <div class="flex max-w-[560px] flex-col gap-8">
-          <div class="flex flex-col gap-6">
-            <h1 id="hero-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.04em] sm:text-5xl lg:text-h1">
-              Custom apparel manufacturing at factory prices
-            </h1>
-            <p class="text-regular leading-[1.5] sm:text-medium">
-              We build garments for brands that demand quality and speed. From concept to shipment, Fabricly handles everything with the precision of a factory and the partnership of a team that cares.
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-4">
-            <a href="/contact.html" class="btn-primary">Get a Free Quote</a>
-            <a href="#process" class="btn-outline-light">Explore Articles</a>
+    <section class="hero">
+      <img src="public/images/figma-home/hero.png" alt="" class="hero-bg" fetchpriority="high" />
+      <div class="overlay"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1>Custom apparel manufacturing at factory prices</h1>
+          <p>We build garments for brands that demand quality and speed. From concept to shipment, Fabricly handles everything with the precision of a factory and the partnership of a team that cares.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="contact.html">Get a Free Quote</a>
+            <a class="btn btn-light" href="#process">Explore Articles</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 2. WHAT SETS US APART (Layout / 520 /) ═══════════════════
-         Tagline + H2 + subtitle, then 3 image cards w/ overlay -->
-    <section class="section" aria-labelledby="apart-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Why Fabricly</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="apart-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              What sets us apart
-            </h2>
-            <p class="text-regular sm:text-medium">We build garments that matter</p>
-          </div>
+    <section class="section intro-features">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Why Fabricly</span>
+          <h2>What sets us apart</h2>
+          <p>We build garments that matter</p>
         </header>
-
-        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <article class="relative flex min-h-[440px] flex-col justify-center gap-6 overflow-hidden rounded-md p-8 text-white">
-            <div aria-hidden="true" class="absolute inset-0">
-              <img src="/public/images/home/customization.jpg"
-                   alt="" class="h-full w-full object-cover"
-                   onerror="this.src='https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=900&q=80'" />
-              <div class="absolute inset-0 bg-scheme1-neutral/60"></div>
+        <div class="feature-cards">
+          <article class="image-card">
+            <img src="public/images/figma-home/feature-1.png" alt="" />
+            <div class="card-shade"></div>
+            <div>
+              <h3>Complete customization</h3>
+              <p>Shirts, jeans, jackets, hoodies, sportswear, and more tailored exactly as you need them.</p>
+              <a href="contact.html" class="btn btn-primary">Request a Quote</a>
             </div>
-            <div class="relative flex flex-col gap-4">
-              <h3 class="text-3xl font-bold leading-[1.3] tracking-[-0.01em] lg:text-h4">Complete customization</h3>
-              <p class="text-regular leading-[1.5]">Shirts, jeans, jackets, hoodies, sportswear, and more tailored exactly as you need them.</p>
-            </div>
-            <a href="/contact.html" class="btn-primary relative w-fit">
-              Request a Quote
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-            </a>
           </article>
-          <!-- Card 2 -->
-          <article class="relative flex min-h-[440px] flex-col justify-center gap-6 overflow-hidden rounded-md p-8 text-white">
-            <div aria-hidden="true" class="absolute inset-0">
-              <img src="/public/images/home/sourcing.jpg"
-                   alt="" class="h-full w-full object-cover"
-                   onerror="this.src='https://images.unsplash.com/photo-1604176354204-9268737828e4?w=900&q=80'" />
-              <div class="absolute inset-0 bg-scheme1-neutral/60"></div>
+          <article class="image-card">
+            <img src="public/images/figma-home/feature-2.png" alt="" />
+            <div class="card-shade"></div>
+            <div>
+              <h3>Global sourcing expertise</h3>
+              <p>Access premium fabrics and materials from suppliers across the world at competitive prices.</p>
+              <a href="contact.html" class="btn btn-primary">Request a Quote</a>
             </div>
-            <div class="relative flex flex-col gap-4">
-              <h3 class="text-3xl font-bold leading-[1.3] tracking-[-0.01em] lg:text-h4">Global sourcing expertise</h3>
-              <p class="text-regular leading-[1.5]">Access premium fabrics and materials from suppliers across the world at competitive prices.</p>
-            </div>
-            <a href="/contact.html" class="btn-primary relative w-fit">
-              Request a Quote
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-            </a>
           </article>
-          <!-- Card 3 -->
-          <article class="relative flex min-h-[440px] flex-col justify-center gap-6 overflow-hidden rounded-md p-8 text-white">
-            <div aria-hidden="true" class="absolute inset-0">
-              <img src="/public/images/home/export.jpg"
-                   alt="" class="h-full w-full object-cover"
-                   onerror="this.src='https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=900&q=80'" />
-              <div class="absolute inset-0 bg-scheme1-neutral/60"></div>
+          <article class="image-card">
+            <img src="public/images/figma-home/feature-3.png" alt="" />
+            <div class="card-shade"></div>
+            <div>
+              <h3>International export ready</h3>
+              <p>Reliable shipping to the US, UK, Canada, Europe, and Australia with full documentation support.</p>
+              <a href="contact.html" class="btn btn-primary">Request a Quote</a>
             </div>
-            <div class="relative flex flex-col gap-4">
-              <h3 class="text-3xl font-bold leading-[1.3] tracking-[-0.01em] lg:text-h4">International export ready</h3>
-              <p class="text-regular leading-[1.5]">Reliable shipping to the US, UK, Canada, Europe, and Australia with full documentation support.</p>
-            </div>
-            <a href="/contact.html" class="btn-primary relative w-fit">
-              Request a Quote
-              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-            </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 3. STATS (Stats / 45 /) ══════════════════════════════════
-         "Why brands work with Fabricly" — image + 3 stat cards -->
-    <section class="section" aria-labelledby="stats-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Proven</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="stats-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              Why brands work with Fabricly
-            </h2>
-            <p class="text-regular sm:text-medium">We've built trust through consistent delivery and quality</p>
-          </div>
+    <section class="section credibility">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Proven</span>
+          <h2>Why brands work with Fabricly</h2>
+          <p>We've built trust through consistent delivery and quality</p>
         </header>
-
-        <div class="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
-          <div class="relative aspect-[4/5] overflow-hidden rounded-lg lg:aspect-auto">
-            <img src="/public/images/home/stats.jpg"
-                 alt="Fabricly factory floor"
-                 class="h-full w-full object-cover" loading="lazy"
-                 onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80'" />
-          </div>
-          <div class="flex flex-col gap-8">
-            <div class="flex flex-col gap-6 rounded-lg border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-              <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Low MOQ flexibility</h3>
-              <hr class="border-scheme1-border" />
-              <p class="text-regular text-right leading-[1.5]">Start production without massive inventory commitments</p>
-            </div>
-            <div class="flex flex-col gap-6 rounded-lg border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-              <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Custom production</h3>
-              <hr class="border-scheme1-border" />
-              <p class="text-regular text-right leading-[1.5]">From fabric sourcing to labels, packaging, customization, and finishing</p>
-            </div>
-            <div class="flex flex-col gap-6 rounded-lg border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-              <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Direct communication</h3>
-              <hr class="border-scheme1-border" />
-              <p class="text-regular text-right leading-[1.5]">Fast responses and transparent production updates</p>
-            </div>
+        <div class="cred-grid">
+          <img src="public/images/figma-home/factory.png" alt="Apparel production work in progress" />
+          <div class="stat-list">
+            <article><h3>Low MOQ flexibility</h3><p>Start production without massive inventory commitments</p></article>
+            <article><h3>Custom production</h3><p>From fabric sourcing to labels, packaging, customization, and finishing</p></article>
+            <article><h3>Direct communication</h3><p>Fast responses and transparent production updates</p></article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 4. PROCESS (Layout / 374 /) ═══════════════════════════════
-         5 step cards: 1 large left, 2x2 right grid -->
-    <section id="process" class="section" aria-labelledby="process-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Process</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="process-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              From concept to production
-            </h2>
-            <p class="text-regular sm:text-medium">Five straightforward steps take your apparel from concept to global delivery</p>
-          </div>
+    <section class="section process" id="process">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Process</span>
+          <h2>From concept to production</h2>
+          <p>Five straightforward steps take your apparel from concept to global delivery</p>
         </header>
-
-        <div class="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
-          <!-- Step 1 (large) -->
-          <article class="card-fg flex flex-col">
-            <div class="flex flex-1 flex-col justify-center gap-8 p-8 lg:p-12">
-              <div class="flex flex-col gap-2">
-                <p class="text-h6 font-bold leading-[1.4] tracking-[-0.01em]" style="font-family:Oswald,system-ui,sans-serif">1.</p>
-                <div class="flex flex-col gap-6">
-                  <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">Share your requirements</h3>
-                  <p class="text-regular leading-[1.5]">Send your design, tech pack, reference images, sizing, quantity, and customization details</p>
-                </div>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">
-                Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-              </a>
+        <div class="process-grid">
+          <article class="process-main">
+            <div class="process-copy">
+              <b>1.</b>
+              <h3>Share your requirements</h3>
+              <p>Send your design, tech pack, reference images, sizing, quantity, and customization details</p>
+              <a class="btn btn-primary" href="contact.html">Start Inquiry</a>
             </div>
-            <div class="h-[280px] w-full overflow-hidden lg:h-[360px]">
-              <img src="/public/images/home/process-1.jpg" alt=""
-                   class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=900&q=80'" />
-            </div>
+            <img src="public/images/figma-home/process-1.png" alt="" />
           </article>
-
-          <!-- Steps 2-5 (2x2 grid) -->
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <!-- Step 2 -->
-            <article class="card-fg flex flex-col">
-              <div class="flex flex-col gap-6 p-6">
-                <div class="flex flex-col gap-2">
-                  <p class="text-h6 font-bold leading-[1.4]" style="font-family:Oswald,system-ui,sans-serif">2.</p>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Sampling &amp; material sourcing</h3>
-                    <p class="text-regular leading-[1.5]">We source fabrics, trims, and develop samples based on your specifications</p>
-                  </div>
-                </div>
-                <a href="/contact.html" class="btn-primary w-fit">
-                  Start Inquiry
-                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-                </a>
-              </div>
-              <div class="h-[171px] w-full overflow-hidden">
-                <img src="/public/images/home/process-2.jpg" alt=""
-                     class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=900&q=80'" />
-              </div>
-            </article>
-            <!-- Step 3 -->
-            <article class="card-fg flex flex-col">
-              <div class="flex flex-col gap-6 p-6">
-                <div class="flex flex-col gap-2">
-                  <p class="text-h6 font-bold leading-[1.4]" style="font-family:Oswald,system-ui,sans-serif">3.</p>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Production &amp; quality control</h3>
-                    <p class="text-regular leading-[1.5]">Once approved, production begins with ongoing quality checks and updates</p>
-                  </div>
-                </div>
-                <a href="/contact.html" class="btn-primary w-fit">
-                  Start Inquiry
-                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-                </a>
-              </div>
-              <div class="h-[171px] w-full overflow-hidden">
-                <img src="/public/images/home/process-3.jpg" alt=""
-                     class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1521577352947-9bb58764b69a?w=900&q=80'" />
-              </div>
-            </article>
-            <!-- Step 4 -->
-            <article class="card-fg flex flex-col">
-              <div class="flex flex-col gap-6 p-6">
-                <div class="flex flex-col gap-2">
-                  <p class="text-h6 font-bold leading-[1.4]" style="font-family:Oswald,system-ui,sans-serif">4.</p>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Packaging &amp; branding</h3>
-                    <p class="text-regular leading-[1.5]">Custom labels, tags, packaging, and finishing prepared for your brand</p>
-                  </div>
-                </div>
-                <a href="/contact.html" class="btn-primary w-fit">
-                  Start Inquiry
-                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-                </a>
-              </div>
-              <div class="h-[171px] w-full overflow-hidden">
-                <img src="/public/images/home/process-4.jpg" alt=""
-                     class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=80'" />
-              </div>
-            </article>
-            <!-- Step 5 -->
-            <article class="card-fg flex flex-col">
-              <div class="flex flex-col gap-6 p-6">
-                <div class="flex flex-col gap-2">
-                  <p class="text-h6 font-bold leading-[1.4]" style="font-family:Oswald,system-ui,sans-serif">5.</p>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Shipping &amp; export</h3>
-                    <p class="text-regular leading-[1.5]">Orders are packed and shipped with export documentation assistance</p>
-                  </div>
-                </div>
-                <a href="/contact.html" class="btn-primary w-fit">
-                  Start Inquiry
-                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-                </a>
-              </div>
-              <div class="h-[171px] w-full overflow-hidden">
-                <img src="/public/images/home/process-5.jpg" alt=""
-                     class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=900&q=80'" />
-              </div>
-            </article>
+          <div class="process-small-grid">
+            <article><div><b>2.</b><h3>Sampling &amp; material sourcing</h3><p>We source fabrics, trims, and develop samples based on your specifications</p><a class="btn btn-primary" href="contact.html">Start Inquiry</a></div><img src="public/images/figma-home/process-2.png" alt="" /></article>
+            <article><div><b>3.</b><h3>Production &amp; quality control</h3><p>Once approved, production begins with ongoing quality checks and updates</p><a class="btn btn-primary" href="contact.html">Start Inquiry</a></div><img src="public/images/figma-home/process-3.png" alt="" /></article>
+            <article><div><b>4.</b><h3>Packaging &amp; branding</h3><p>Custom labels, tags, packaging, and finishing prepared for your brand</p><a class="btn btn-primary" href="contact.html">Start Inquiry</a></div><img src="public/images/figma-home/process-4.png" alt="" /></article>
+            <article><div><b>5.</b><h3>Shipping &amp; export</h3><p>Orders are packed and shipped with export documentation assistance</p><a class="btn btn-primary" href="contact.html">Start Inquiry</a></div><img src="public/images/figma-home/process-5.png" alt="" /></article>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 5. PORTFOLIO (Portfolio / 14 /) ════════════════════════════
-         "Recent projects we've shipped" — 3 cards -->
-    <section class="section" aria-labelledby="portfolio-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Work</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="portfolio-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              Recent projects we've shipped
-            </h2>
-            <p class="text-regular sm:text-medium">Real garments for real brands across the globe</p>
-          </div>
+    <section class="section projects">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Work</span>
+          <h2>Recent projects we've shipped</h2>
+          <p>Real apparel categories, real production needs, delivered by Fabricly</p>
         </header>
-
-        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Project 1 -->
-          <article class="card-fg flex flex-col">
-            <div class="aspect-[16/9] w-full overflow-hidden">
-              <img src="/public/images/home/proj-1.jpg" alt="450GSM Oversized Hoodies"
-                   class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=900&q=80'" />
-            </div>
-            <div class="flex flex-1 flex-col gap-6 p-6">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">450GSM Oversized Hoodies</h3>
-                  <p class="text-regular leading-[1.5]">500 units custom-milled for a US streetwear brand</p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <span class="tag">Hoodies</span>
-                  <span class="tag">3D Puff Print</span>
-                  <span class="tag">Drop-Shoulder</span>
-                </div>
-              </div>
-              <a href="#" class="btn-primary w-fit">
-                View project
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
-              </a>
-            </div>
-          </article>
-          <!-- Project 2 -->
-          <article class="card-fg flex flex-col">
-            <div class="aspect-square w-full overflow-hidden">
-              <img src="/public/images/home/proj-2.jpg" alt="Interlock Tech Tracksuits"
-                   class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1483721310020-03333e577078?w=900&q=80'" />
-            </div>
-            <div class="flex flex-1 flex-col gap-6 p-6">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Interlock Tech Tracksuits</h3>
-                  <p class="text-regular leading-[1.5]">200 cut-and-sew sets shipped to an activewear brand in USA</p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <span class="tag">Moisture-Wicking</span>
-                  <span class="tag">Waterproof Zippers</span>
-                  <span class="tag">Athletic Fit</span>
-                </div>
-              </div>
-              <a href="#" class="btn-primary w-fit">
-                View project
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
-              </a>
-            </div>
-          </article>
-          <!-- Project 3 -->
-          <article class="card-fg flex flex-col">
-            <div class="aspect-[16/9] w-full overflow-hidden">
-              <img src="/public/images/home/proj-3.jpg" alt="Heavyweight Organic Tees"
-                   class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=900&q=80'" />
-            </div>
-            <div class="flex flex-1 flex-col gap-6 p-6">
-              <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-h5 font-bold leading-[1.4] tracking-[-0.01em]">Heavyweight Organic Tees</h3>
-                  <p class="text-regular leading-[1.5]">550 retail-ready pieces completed with custom private labeling for a UK store.</p>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <span class="tag">240GSM Cotton</span>
-                  <span class="tag">Silicon Wash</span>
-                  <span class="tag">Custom Woven Tags</span>
-                </div>
-              </div>
-              <a href="#" class="btn-primary w-fit">
-                View project
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" /></svg>
-              </a>
-            </div>
-          </article>
+        <div class="project-grid">
+          <article class="project-card"><img src="public/images/figma-home/project-1.png" alt="" /><div><h3>450GSM Oversized Hoodies</h3><p>Premium fleece hoodies produced for a streetwear brand with custom labels and packaging.</p><p class="tags">Heavyweight Fleece · Private Label · Export Ready</p><a class="btn btn-primary" href="products.html">View project</a></div></article>
+          <article class="project-card tall"><img src="public/images/figma-home/project-2.png" alt="" /><div><h3>Interlock Tech Tracksuits</h3><p>Performance tracksuits completed with sizing consistency, trims, and brand finishing.</p><p class="tags">Interlock Fabric · Custom Zippers · Bulk Production</p><a class="btn btn-primary" href="products.html">View project</a></div></article>
+          <article class="project-card"><img src="public/images/figma-home/project-3.png" alt="" /><div><h3>Heavyweight Organic Tees</h3><p>Retail-ready pieces completed with custom private labeling for a UK store.</p><p class="tags">240GSM Cotton · Silicon Wash · Woven Tags</p><a class="btn btn-primary" href="products.html">View project</a></div></article>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 6. WHY CHOOSE FABRICLY (Layout / 507 /) ═══════════════════
-         Tabbed feature explainer -->
-    <section class="section" aria-labelledby="advantage-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Our advantage</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="advantage-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              Why choose Fabricly for your apparel manufacturing
-            </h2>
-            <p class="text-regular sm:text-medium">We are a direct manufacturer with no middlemen, no markups, and no delays. Your brand deserves factory-level pricing and dedicated production support.</p>
-          </div>
+    <section class="section facility">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Factory support</span>
+          <h2>Why choose Fabricly for your apparel manufacturing</h2>
+          <p>We are a direct manufacturer with no middlemen, no markups, and no delays.</p>
         </header>
-
-        <div class="w-full overflow-hidden rounded-lg border border-scheme1-border bg-scheme1-fg shadow-soft" data-tabs>
-          <!-- Tab list -->
-          <div role="tablist" aria-label="Fabricly advantages"
-               class="flex flex-col border-b border-scheme1-border md:flex-row">
-            <button role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true"
-                    class="tab-link border-b border-scheme1-border bg-transparent md:border-b-0">Direct factory</button>
-            <button role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false"
-                    class="tab-link border-b border-scheme1-border md:border-b-0">Flexible MOQ</button>
-            <button role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false"
-                    class="tab-link border-b border-scheme1-border md:border-b-0">Global export</button>
-            <button role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false"
-                    class="tab-link border-b border-scheme1-border md:border-b-0">Custom options</button>
-            <button role="tab" id="tab-5" aria-controls="panel-5" aria-selected="false"
-                    class="tab-link border-b-0">Fast shipping</button>
+        <div class="tabs-card">
+          <div class="tabs" role="tablist" aria-label="Fabricly advantages">
+            <button aria-selected="true">Direct factory</button>
+            <button>Flexible MOQ</button>
+            <button>Global export</button>
+            <button>Custom options</button>
+            <button>Fast shipping</button>
           </div>
-
-          <!-- Tab panels -->
-          <div role="tabpanel" id="panel-1" aria-labelledby="tab-1"
-               class="grid grid-cols-1 items-center gap-12 p-8 lg:grid-cols-2 lg:gap-20 lg:p-12">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-4">
-                <p class="eyebrow">Direct</p>
-                <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">We are the factory, not a broker</h3>
-                <p class="text-regular leading-[1.5]">No middlemen means direct factory pricing and faster communication. You work straight with our production team from inquiry to shipment.</p>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">
-                Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg>
-              </a>
+          <div class="tab-panel">
+            <div>
+              <span>Direct</span>
+              <h3>We are the factory, not a broker</h3>
+              <p>No middlemen means direct factory pricing and faster communication. You work straight with our production team from inquiry to shipment.</p>
+              <a href="contact.html" class="btn btn-primary">Start Inquiry</a>
             </div>
-            <div class="aspect-square w-full overflow-hidden rounded-md border border-scheme1-neutral/15">
-              <img src="/public/images/home/tab-direct.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=900&q=80'" />
-            </div>
-          </div>
-          <div role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden
-               class="grid grid-cols-1 items-center gap-12 p-8 lg:grid-cols-2 lg:gap-20 lg:p-12">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-4">
-                <p class="eyebrow">Flexible</p>
-                <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">Start small, scale fast</h3>
-                <p class="text-regular leading-[1.5]">Low MOQs let new brands launch without massive inventory commitments and grow at their own pace.</p>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg></a>
-            </div>
-            <div class="aspect-square w-full overflow-hidden rounded-md border border-scheme1-neutral/15">
-              <img src="/public/images/home/tab-moq.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=900&q=80'" />
-            </div>
-          </div>
-          <div role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden
-               class="grid grid-cols-1 items-center gap-12 p-8 lg:grid-cols-2 lg:gap-20 lg:p-12">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-4">
-                <p class="eyebrow">Global</p>
-                <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">Ready for international export</h3>
-                <p class="text-regular leading-[1.5]">Documentation, customs, and door-to-door logistics — handled.</p>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg></a>
-            </div>
-            <div class="aspect-square w-full overflow-hidden rounded-md border border-scheme1-neutral/15">
-              <img src="/public/images/home/tab-export.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1494412519320-aa613dfb7738?w=900&q=80'" />
-            </div>
-          </div>
-          <div role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden
-               class="grid grid-cols-1 items-center gap-12 p-8 lg:grid-cols-2 lg:gap-20 lg:p-12">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-4">
-                <p class="eyebrow">Custom</p>
-                <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">Tailored to your brand</h3>
-                <p class="text-regular leading-[1.5]">Custom labels, tags, packaging, prints, and trims — built around your identity.</p>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg></a>
-            </div>
-            <div class="aspect-square w-full overflow-hidden rounded-md border border-scheme1-neutral/15">
-              <img src="/public/images/home/tab-custom.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1604176354204-9268737828e4?w=900&q=80'" />
-            </div>
-          </div>
-          <div role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden
-               class="grid grid-cols-1 items-center gap-12 p-8 lg:grid-cols-2 lg:gap-20 lg:p-12">
-            <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-4">
-                <p class="eyebrow">Speed</p>
-                <h3 class="text-3xl font-bold leading-[1.2] tracking-[-0.01em] lg:text-h3">Fast turnaround, on time</h3>
-                <p class="text-regular leading-[1.5]">Sample in 7–10 days. Bulk in 25–45. Quotes in 24 hours.</p>
-              </div>
-              <a href="/contact.html" class="btn-primary w-fit">Start Inquiry
-                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8" /></svg></a>
-            </div>
-            <div class="aspect-square w-full overflow-hidden rounded-md border border-scheme1-neutral/15">
-              <img src="/public/images/home/tab-shipping.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                   onerror="this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&q=80'" />
-            </div>
+            <img src="public/images/figma-home/facility.png" alt="Fabricly production facility" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 7. TESTIMONIALS (Testimonial / 17 /) ══════════════════════
-         6 quote cards in 2 rows x 3 cols -->
-    <section class="section" aria-labelledby="testimonials-title">
-      <div class="container-1280 flex flex-col items-center gap-sec-md">
-        <header class="flex max-w-[768px] flex-col items-center gap-4 text-center">
-          <p class="eyebrow">Testimonials</p>
-          <div class="flex flex-col gap-6">
-            <h2 id="testimonials-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-              What clients say
-            </h2>
-            <p class="text-regular sm:text-medium">Brands trust us with their reputation</p>
-          </div>
+    <section class="section clients">
+      <div class="wrap stack-lg">
+        <header class="section-title">
+          <span>Clients</span>
+          <h2>What clients say</h2>
         </header>
-
-        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">Fabricly turned our small brand into something real. The quality is there, the timelines hold, and they never cut corners.</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=49" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">Sarah Mitchell</span><span class="text-regular">Founder, Threadmark</span></div>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">Their attention to detail on every single piece is why our customers keep coming back.</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=47" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">Emma Rodriguez</span><span class="text-regular">Brand Director, Velocity</span></div>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">As a growing Shopify store, we struggled to find factories that offered premium quality without demanding massive minimum order quantities. Fabricly gave us the flexible MOQs we needed to scale our activewear line smoothly. Their communication is faster than most local suppliers</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=44" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">Sarah Jenkins</span><span class="text-regular">Creative Director, Kinetic Athleis (Canada)</span></div>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">Finding a reliable manufacturing partner overseas used to be a nightmare of miscommunication and poor fabric quality. Fabricly completely changed that for our brand. The sampling process was spot on, the 450GSM French Terry fabric was incredible, and production finished exactly on schedule.</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=52" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">Marcus Vance</span><span class="text-regular">Founder, AeroStreetwear (United States)</span></div>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">We've worked with five manufacturers. Fabricly is the only one that feels like a partner, not just a vendor.</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=33" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">James Chen</span><span class="text-regular">CEO, Urban Collective</span></div>
-            </figcaption>
-          </figure>
-          <figure class="flex flex-col gap-6 rounded-md border border-scheme1-border bg-scheme1-fg p-8 shadow-soft">
-            <blockquote class="text-medium leading-[1.5]">The attention to detail on our custom private label garments was exceptional. From the precision of the high-density print down to the custom eco-friendly polybag packaging, everything arrived retail-ready. They handle the international export logistics flawlessly</blockquote>
-            <figcaption class="flex items-center gap-4">
-              <img src="https://i.pravatar.cc/96?img=60" alt="" class="h-12 w-12 rounded-sm object-cover" />
-              <div class="flex flex-col"><span class="font-semibold">Liam Cooper</span><span class="text-regular">Operations Lead, Form &amp; Function (United Kingdom)</span></div>
-            </figcaption>
-          </figure>
+        <div class="quote-grid">
+          <blockquote>Fabricly turned our small brand into something real. The quality is there, the timelines hold, and they never cut corners.<cite>Sarah Mitchell</cite></blockquote>
+          <blockquote>Their attention to detail on every single piece is why our customers keep coming back.<cite>Emma Rodriguez</cite></blockquote>
+          <blockquote>Fabricly gave us flexible MOQs and premium activewear quality. Communication was faster than most local suppliers.<cite>Sarah Jenkins</cite></blockquote>
+          <blockquote>The sampling process was spot on, the 450GSM French Terry fabric was incredible, and production finished exactly on schedule.<cite>Marcus Vance</cite></blockquote>
+          <blockquote>We've worked with five manufacturers. Fabricly is the only one that feels like a partner, not just a vendor.<cite>James Chen</cite></blockquote>
+          <blockquote>Everything arrived retail-ready, from the print down to the custom packaging. Export logistics were handled flawlessly.<cite>Liam Cooper</cite></blockquote>
         </div>
       </div>
     </section>
 
-    <!-- ═══ 8. CERTIFIED FOR EXCELLENCE (Logo / 4 /) ═══════════════════
-         Text + dual CTA on left, image collage on right -->
-    <section class="section" aria-labelledby="certified-title">
-      <div class="container-1280">
-        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div class="flex flex-col gap-8">
-            <div class="flex flex-col gap-6">
-              <h2 id="certified-title" class="text-4xl font-bold leading-[1.2] tracking-[-0.01em] sm:text-5xl lg:text-h2">
-                Certified for excellence
-              </h2>
-              <p class="text-regular sm:text-medium">Fabricly follows structured production workflows, quality inspection processes, and export-focused manufacturing practices designed to support modern apparel brands</p>
-            </div>
-            <div class="flex flex-wrap gap-4">
-              <a href="/contact.html" class="btn-primary">Get a Free Quote</a>
-              <a href="/manufacturing-process.html" class="btn-outline">View Manufacturing Process</a>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 gap-4 px-2">
-            <div class="flex flex-col gap-4">
-              <div class="aspect-[222/240] overflow-hidden rounded-sm border border-scheme1-neutral/15 shadow-card">
-                <img src="/public/images/home/cert-1.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1567113463300-102a7eb3cb26?w=600&q=80'" />
-              </div>
-              <div class="aspect-[1/1] overflow-hidden rounded-sm border border-scheme1-neutral/15 shadow-card">
-                <img src="/public/images/home/cert-3.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'" />
-              </div>
-            </div>
-            <div class="flex flex-col gap-4">
-              <div class="aspect-[1/1] overflow-hidden rounded-sm border border-scheme1-neutral/15 shadow-card">
-                <img src="/public/images/home/cert-2.jpg" alt="" class="h-full w-full object-contain bg-white" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80'" />
-              </div>
-              <div class="aspect-[222/210] overflow-hidden rounded-sm border border-scheme1-neutral/15 shadow-card">
-                <img src="/public/images/home/cert-4.jpg" alt="" class="h-full w-full object-cover" loading="lazy"
-                     onerror="this.src='https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=600&q=80'" />
-              </div>
-            </div>
-          </div>
+    <section class="section certified">
+      <div class="wrap certified-grid">
+        <div>
+          <h2>Certified for excellence</h2>
+          <p>Fabricly follows structured production workflows, quality inspection processes, and export-focused manufacturing practices designed to support modern apparel brands.</p>
+          <div class="actions"><a href="contact.html" class="btn btn-primary">Get a Free Quote</a><a href="manufacturing-process.html" class="btn btn-outline">View Manufacturing Process</a></div>
+        </div>
+        <div class="cert-logos">
+          <img src="public/images/kcci_logo.png" alt="KCCI" />
+          <img src="public/images/FBR_Pakistan_logo.png" alt="FBR Pakistan" />
+          <img src="public/images/Pakistan-Single-Window-PSW.jpeg" alt="Pakistan Single Window" />
+          <img src="public/images/certificates.jpg" alt="Certificate" />
         </div>
       </div>
     </section>
 
-    <!-- ═══ 9. CTA BANNER ═══════════════════════════════════════════ -->
-    <div data-include="cta"></div>
-
+    <section class="section cta-section">
+      <div class="wrap">
+        <div class="cta-card">
+          <div>
+            <h2>Get your apparel manufactured at scale</h2>
+            <p>Direct Manufacturer • No Middlemen • Fast Quotes Within 24 Hours</p>
+          </div>
+          <a href="contact.html" class="btn btn-primary">Start Inquiry</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
-  <div data-include="footer"></div>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="public/images/logo/fabricly-logo-transparent.png" alt="Fabricly" />
+        <p>Fabricly helps apparel brands develop custom clothing with sourcing, production, and export support. Discuss your requirements, sourcing needs, or production plans with Fabricly now.</p>
+        <div class="actions"><a href="contact.html" class="btn btn-primary">Start Your Project</a><a href="https://wa.me/923268680669" class="btn btn-outline">Talk To Us</a></div>
+        <small>Custom manufacturing • Low MOQ flexibility • Export support</small>
+      </div>
+      <div><h2>Useful Links</h2><a href="index.html">Home</a><a href="about.html">About us</a><a href="contact.html">Contact us</a><a href="products.html">Products</a><a href="fabric-range.html">Fabric Range</a><a href="manufacturing-process.html">Manufacturing Process</a><a href="privacy-policy.html">Privacy Policy</a></div>
+      <div><h2>Categories</h2><a href="products.html#sportswear">Sports Wear</a><a href="products.html#casual">Casual Wear</a><a href="products.html#gym">Gym Wear</a><a href="products.html#safety">Safety Wear</a></div>
+      <div><h2>Contact info</h2><p>Inquiries:</p><a href="tel:+923268680669">+92 326 8680669</a><a href="mailto:contact@fabricly.pk">contact@fabricly.pk</a><p>W3Q4+3X3, Arafat town Block L, Karachi, Pakistan 74600</p></div>
+    </div>
+    <div class="wrap footer-bottom"><p>© 2026 Fabricly. All rights reserved.</p><p>Karachi, Pakistan - Serving clients internationally.</p></div>
+  </footer>
 
-  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const menu = document.querySelector('.mobile-menu');
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      toggle.setAttribute('aria-expanded', String(open));
+      menu?.classList.toggle('is-open', open);
+    });
+  </script>
 </body>
 </html>
+

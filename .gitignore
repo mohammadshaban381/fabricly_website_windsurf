@@ -1,5 +1,8 @@
 node_modules/
-dist/
+dist/*
+!dist/css/
+dist/css/*
+!dist/css/output.css
 .DS_Store
 *.log
 .env
