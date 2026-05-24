@@ -1,5 +1,7 @@
 const PARTIALS = {
   'site-header': 'partials/navbar.html',
+  'site-certified': 'partials/certified.html',
+  'site-cta': 'partials/cta.html',
   'site-footer': 'partials/footer.html',
 };
 
@@ -109,15 +111,46 @@ function initTabs(root = document) {
   const tabs = Array.from(root.querySelectorAll('.tabs [role="tab"]'));
   const panels = tabs.map((tab) => document.getElementById(tab.getAttribute('aria-controls')));
   if (!tabs.length) return;
+  let activeIndex = tabs.findIndex((tab) => tab.getAttribute('aria-selected') === 'true');
+  if (activeIndex < 0) activeIndex = 0;
+
+  function scrollActiveTabIntoPlace(index) {
+    const tab = tabs[index];
+    const scroller = tab?.closest('.tabs');
+    if (!tab || !scroller || window.matchMedia('(min-width: 641px)').matches) return;
+
+    tab.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest',
+    });
+  }
 
   function activate(index) {
     tabs.forEach((tab, tabIndex) => {
       const selected = tabIndex === index;
       tab.setAttribute('aria-selected', String(selected));
       tab.setAttribute('tabindex', selected ? '0' : '-1');
-      panels[tabIndex]?.toggleAttribute('hidden', !selected);
+      const panel = panels[tabIndex];
+      if (!panel) return;
+
+      panel.classList.remove('is-entering', 'is-leaving');
+      if (selected) {
+        panel.hidden = false;
+        panel.classList.add('is-entering');
+      } else if (!panel.hidden) {
+        panel.classList.add('is-leaving');
+        window.setTimeout(() => {
+          if (tab.getAttribute('aria-selected') === 'false') {
+            panel.hidden = true;
+            panel.classList.remove('is-leaving');
+          }
+        }, 220);
+      }
     });
+    activeIndex = index;
     tabs[index].focus({ preventScroll: true });
+    scrollActiveTabIntoPlace(index);
   }
 
   tabs.forEach((tab, index) => {
