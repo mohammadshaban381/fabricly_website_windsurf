@@ -1,50 +1,27 @@
-<!--
-  Fabricly Navbar — matches Figma Navbar / 2 / (desktop + mobile)
--->
-<header id="site-header"
-        class="sticky top-0 z-50 w-full bg-scheme1-bg/90 backdrop-blur transition-shadow"
-        role="banner">
-  <nav class="mx-auto flex h-16 lg:h-[72px] w-full max-w-[1440px] items-center gap-4 px-page-mobile lg:gap-8 lg:px-page"
-       aria-label="Primary">
-    <a href="/index.html" class="flex shrink-0 items-center" aria-label="Fabricly — Home">
-      <img src="/public/images/logo/fabricly-logo-transparent.png" alt="Fabricly"
-           class="h-11 w-auto" width="84" height="44" decoding="async" />
-    </a>
-
-    <ul class="hidden flex-1 items-center justify-center gap-8 lg:flex" role="menubar">
-      <li role="none"><a role="menuitem" href="/index.html"                 class="nav-link">Home</a></li>
-      <li role="none"><a role="menuitem" href="/products.html"              class="nav-link">Products</a></li>
-      <li role="none"><a role="menuitem" href="/fabric-range.html"          class="nav-link">Fabric Range</a></li>
-      <li role="none"><a role="menuitem" href="/manufacturing-process.html" class="nav-link">Manufacturing Process</a></li>
-      <li role="none"><a role="menuitem" href="/about.html"                 class="nav-link">About Us</a></li>
-      <li role="none"><a role="menuitem" href="/contact.html"               class="nav-link">Contact Us</a></li>
-    </ul>
-
-    <div class="ml-auto flex items-center gap-2 lg:gap-4">
-      <a href="/contact.html" class="btn-primary text-tiny lg:text-regular">Start Inquiry</a>
-
-      <button type="button" id="nav-toggle"
-              class="inline-flex h-12 w-12 items-center justify-center rounded-sm text-scheme1-text lg:hidden"
-              aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
-        <svg class="icon-open h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <svg class="icon-close hidden h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
-        </svg>
-      </button>
-    </div>
+<header class="site-nav" id="site-header">
+  <a href="index.html" class="brand" aria-label="Fabricly home">
+    <img src="public/images/logo/fabricly-logo-original(1).png" alt="Fabricly" width="44" height="44" />
+  </a>
+  <nav class="desktop-nav" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="fabric-range.html">Fabric Range</a>
+    <a href="manufacturing-process.html">Manufacturing Process</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
   </nav>
-
-  <div id="mobile-menu" class="hidden border-t border-scheme1-border bg-scheme1-bg lg:hidden"
-       role="region" aria-label="Mobile navigation">
-    <ul class="flex flex-col px-page-mobile py-4">
-      <li><a href="/index.html"                 class="mobile-nav-link">Home</a></li>
-      <li><a href="/products.html"              class="mobile-nav-link">Products</a></li>
-      <li><a href="/fabric-range.html"          class="mobile-nav-link">Fabric Range</a></li>
-      <li><a href="/manufacturing-process.html" class="mobile-nav-link">Manufacturing Process</a></li>
-      <li><a href="/about.html"                 class="mobile-nav-link">About Us</a></li>
-      <li><a href="/contact.html"               class="mobile-nav-link">Contact Us</a></li>
-    </ul>
-  </div>
+  <a href="contact.html" class="btn btn-primary nav-cta">Start Inquiry</a>
+  <input class="nav-check" type="checkbox" id="nav-menu-toggle" aria-hidden="true" tabindex="-1" />
+  <label class="nav-toggle" for="nav-menu-toggle" role="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+    <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M6 18L18 6"/></svg>
+  </label>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="fabric-range.html">Fabric Range</a>
+    <a href="manufacturing-process.html">Manufacturing Process</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
 </header>

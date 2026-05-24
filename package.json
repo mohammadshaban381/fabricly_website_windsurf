@@ -8,7 +8,7 @@
     "build:css": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify",
     "dev:serve": "npx --yes serve -l 5173 .",
     "dev": "npm-run-all --parallel dev:css dev:serve",
-    "build": "npm run build:css"
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/css/output.css --minify"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.13",
