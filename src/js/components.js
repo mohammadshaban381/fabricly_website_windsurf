@@ -233,11 +233,80 @@ function initScrollTop() {
   update();
 }
 
-const WHATSAPP_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.54 2 2.07 6.45 2.07 11.93c0 1.75.46 3.46 1.33 4.97L2 22l5.24-1.37a10.03 10.03 0 0 0 4.8 1.22h.01c5.5 0 9.97-4.45 9.97-9.93C22.02 6.45 17.54 2 12.04 2Zm0 18.17h-.01a8.32 8.32 0 0 1-4.24-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.27-4.38c0-4.55 3.72-8.25 8.3-8.25 2.21 0 4.29.86 5.86 2.42a8.18 8.18 0 0 1 2.43 5.83c0 4.55-3.72 8.24-8.3 8.24Zm4.55-6.17c-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.12-.56.12-.17.25-.65.81-.8.98-.15.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.71c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.24.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.9 2.4 1.02 2.56.12.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.48-.29Z"/></svg>';
+const WHATSAPP_ICON = '<svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.54 2 2.07 6.45 2.07 11.93c0 1.75.46 3.46 1.33 4.97L2 22l5.24-1.37a10.03 10.03 0 0 0 4.8 1.22h.01c5.5 0 9.97-4.45 9.97-9.93C22.02 6.45 17.54 2 12.04 2Zm0 18.17h-.01a8.32 8.32 0 0 1-4.24-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.2 8.2 0 0 1-1.27-4.38c0-4.55 3.72-8.25 8.3-8.25 2.21 0 4.29.86 5.86 2.42a8.18 8.18 0 0 1 2.43 5.83c0 4.55-3.72 8.24-8.3 8.24Zm4.55-6.17c-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.12-.56.12-.17.25-.65.81-.8.98-.15.16-.29.18-.54.06-.25-.13-1.05-.39-2-1.23a7.5 7.5 0 0 1-1.38-1.71c-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.24.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.9 2.4 1.02 2.56.12.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.48-.29Z"/></svg>';
+const META_PIXEL_ID = '26855440860773212';
+
+function canUseMarketingTracking() {
+  const consent = window.FabriclyConsent;
+  const host = window.location.hostname;
+  const isLocalHost = /^(localhost|127(?:\.\d{1,3}){3}|0\.0\.0\.0)$/u.test(host) || host.endsWith('.local');
+  return Boolean(consent?.marketing) && !isLocalHost;
+}
+
+function loadMetaPixel() {
+  if (!canUseMarketingTracking() || window.fbq) return Boolean(window.fbq);
+
+  (function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = true;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = true;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'));
+
+  window.fbq('init', META_PIXEL_ID);
+  window.fbq('track', 'PageView');
+  return true;
+}
+
+function trackMetaEvent(name, params = {}) {
+  if (!loadMetaPixel() || !window.fbq) return;
+  window.fbq('track', name, params);
+}
+
+function initMetaTracking() {
+  const body = document.body;
+  const pageName = document.title;
+
+  loadMetaPixel();
+
+  if (body.classList.contains('product-detail-page') || body.classList.contains('fabric-range-page')) {
+    trackMetaEvent('ViewContent', {
+      content_name: pageName,
+      content_category: body.classList.contains('product-detail-page') ? 'product-detail' : 'fabric-range',
+    });
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href*="wa.me"]');
+    if (!link) return;
+    trackMetaEvent('Contact', {
+      content_name: pageName,
+      contact_method: 'whatsapp',
+    });
+  });
+
+  window.addEventListener('fabricly:consentchange', () => {
+    loadMetaPixel();
+  });
+}
 
 function applyWhatsAppIcons(root = document) {
-  root.querySelectorAll('a[href*="wa.me"] svg').forEach((svg) => {
+  root.querySelectorAll('a[href*="wa.me"]:not(.btn) svg').forEach((svg) => {
     svg.outerHTML = WHATSAPP_ICON;
+  });
+  root.querySelectorAll('a.btn[href*="wa.me"]').forEach((link) => {
+    link.querySelectorAll('svg').forEach((svg) => svg.remove());
+    link.insertAdjacentHTML('afterbegin', WHATSAPP_ICON);
   });
 }
 
@@ -267,7 +336,7 @@ function initWhatsAppPrompt() {
     prompted = true;
     window.clearTimeout(hideTimer);
     prompt.classList.add('is-visible');
-    hideTimer = window.setTimeout(hidePrompt, 5000);
+    hideTimer = window.setTimeout(hidePrompt, 4000);
   }
 
   function hidePrompt() {
@@ -282,8 +351,8 @@ function initWhatsAppPrompt() {
 
   function onScroll() {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    if (scrollable <= 0) return;
-    if (!isHome && !prompted && window.scrollY / scrollable >= 0.72) showPrompt();
+    if (!isHome || scrollable <= 0) return;
+    if (!prompted && window.scrollY / scrollable >= 0.3) showPrompt();
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -291,11 +360,7 @@ function initWhatsAppPrompt() {
   float.addEventListener('mouseenter', () => showPrompt(true));
   float.addEventListener('focus', () => showPrompt(true));
   float.addEventListener('click', hidePrompt);
-  if (isHome) {
-    window.setTimeout(() => showPrompt(), 1400);
-  } else {
-    onScroll();
-  }
+  onScroll();
 }
 
 function initCookieConsent() {
@@ -338,6 +403,7 @@ function initCookieConsent() {
   function saveConsent(consent) {
     window.FabriclyConsent = consent;
     localStorage.setItem(storageKey, JSON.stringify({ ...consent, savedAt: new Date().toISOString() }));
+    window.dispatchEvent(new CustomEvent('fabricly:consentchange', { detail: consent }));
     banner.classList.add('is-hiding');
     window.setTimeout(() => banner.remove(), 220);
   }
@@ -520,6 +586,10 @@ function initContactForms(root = document) {
         if (!response.ok || !result.success) {
           throw new Error(result.message || 'Submission failed.');
         }
+        trackMetaEvent('Lead', {
+          content_name: document.title,
+          form_name: form.getAttribute('aria-describedby') || 'contact-form',
+        });
         form.reset();
         clearFieldStates();
         showAlert('success', 'Inquiry sent successfully. Fabricly will review your details and reply as soon as possible.');
@@ -547,6 +617,7 @@ async function init() {
   initScrollTop();
   initWhatsAppPrompt();
   initCookieConsent();
+  initMetaTracking();
   initContactForms();
 }
 
