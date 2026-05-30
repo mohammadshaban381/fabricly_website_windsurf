@@ -13,7 +13,7 @@ async function loadPartial(slot) {
   const url = PARTIALS[name];
   if (!url) return;
 
-  const response = await fetch(url, { cache: 'no-cache' });
+  const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to load ${url}: ${response.status}`);
   }
@@ -32,6 +32,18 @@ function markActiveLinks(root = document) {
     const href = link.getAttribute('href').split('#')[0].split('/').pop() || 'index.html';
     if (href === page) link.setAttribute('aria-current', 'page');
   });
+}
+
+function rafThrottle(callback) {
+  let frameId = 0;
+
+  return (...args) => {
+    if (frameId) return;
+    frameId = window.requestAnimationFrame(() => {
+      frameId = 0;
+      callback(...args);
+    });
+  };
 }
 
 function setMobileMenu(open) {
@@ -101,7 +113,7 @@ function initNav(root = document) {
       lastScrollY = currentScrollY;
     }
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', rafThrottle(onScroll), { passive: true });
   onScroll();
 }
 
@@ -229,7 +241,7 @@ function initScrollTop() {
   button.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('scroll', rafThrottle(update), { passive: true });
   update();
 }
 
@@ -355,7 +367,7 @@ function initWhatsAppPrompt() {
     if (!prompted && window.scrollY / scrollable >= 0.3) showPrompt();
   }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', rafThrottle(onScroll), { passive: true });
   prompt.querySelector('.wa-prompt-close')?.addEventListener('click', closePrompt);
   float.addEventListener('mouseenter', () => showPrompt(true));
   float.addEventListener('focus', () => showPrompt(true));

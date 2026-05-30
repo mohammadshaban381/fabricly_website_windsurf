@@ -411,14 +411,68 @@ body.menu-open { overflow: hidden; }
 }
 .hero-inner { position: relative; }
 .hero-copy {
-  width: min(var(--max-w-md), 100%);
+  width: min(42rem, 100%);
   color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: 1.25rem;
+}
+.hero-kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.45rem 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
 }
 .hero-copy h1 { font-size: var(--fs-h1); line-height: 1.2; letter-spacing: -0.02em; }
-.hero-copy p { font-size: var(--fs-md); line-height: 1.5; }
+.hero-copy p {
+  max-width: 39rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--fs-md);
+  line-height: 1.5;
+}
+.hero-proof-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+.hero-proof-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-sm);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+.feature-cards,
+.cred-grid,
+.process-grid,
+.project-grid,
+.tabs-card,
+.buyer-proof-grid,
+.about-buyer-fit-grid,
+.about-promise-grid,
+.about-founder-grid,
+.about-proof-strip-grid,
+.contact-inquiry-container,
+.contact-detail-grid,
+.certified-grid {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 52rem;
+}
 
 /* ---------------------------------------------------------------------------
    About hero
@@ -1735,7 +1789,7 @@ body.menu-open { overflow: hidden; }
   border-color: var(--roti-dark);
 }
 .contact-card span,
-.contact-form-panel span {
+.contact-form-panel > header > span {
   color: var(--muted);
   font-weight: 600;
   font-size: var(--fs-sm);
@@ -1807,13 +1861,15 @@ body.menu-open { overflow: hidden; }
   line-height: 1.5;
 }
 .field-error {
+  align-self: flex-start;
   color: #b42318;
-  font-size: var(--fs-xs);
-  font-weight: 600;
+  font: 500 0.875rem / 1.35 "Poppins", sans-serif;
   line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
   width: fit-content;
   max-width: 100%;
-  padding: 0.25rem 0.5rem;
+  padding: 0.2rem 0.5rem;
   background: #fff0ee;
   border: 1px solid rgba(180, 35, 24, 0.18);
   border-radius: var(--r-sm);
@@ -2995,6 +3051,9 @@ blockquote p {
     width: min(100%, 24rem);
     justify-self: center;
     padding-inline: var(--cert-collage-mobile-pad-inline);
+  }
+  .hero-proof-list {
+    gap: 0.625rem;
   }
   .cert-logo-row {
     gap: var(--cert-collage-mobile-row-gap);
